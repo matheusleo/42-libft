@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 20:01:44 by mleonard          #+#    #+#             */
-/*   Updated: 2022/04/07 20:04:59 by mleonard         ###   ########.fr       */
+/*   Updated: 2022/04/07 22:33:34 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_toupper(int c)
 {
-	if(ft_isalpha(c) == 1)
+	if (ft_isalpha(c) == 1)
 		return (c - 32);
 	return (c);
 }
