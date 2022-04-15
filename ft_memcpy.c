@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 21:51:45 by mleonard          #+#    #+#             */
-/*   Updated: 2022/04/13 23:28:52 by mleonard         ###   ########.fr       */
+/*   Updated: 2022/04/14 19:24:46 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	if (dest <= src && src <= (dest + n))
 		return (dest);
 	counter = 0;
-	d_temp = (char *)dest;
-	s_temp = (char *)src;
+	d_temp = (unsigned char *)dest;
+	s_temp = (unsigned char *)src;
 	while (counter < n)
 	{
 		d_temp[counter] = s_temp[counter];

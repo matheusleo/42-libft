@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 21:58:31 by mleonard          #+#    #+#             */
-/*   Updated: 2022/04/13 23:29:06 by mleonard         ###   ########.fr       */
+/*   Updated: 2022/04/14 19:25:12 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char	*d_temp;
 
 	counter = 0;
-	s_temp = (char *)src;
-	d_temp = (char *)dest;
-	temp = (char *)malloc(sizeof(char) * n);
+	s_temp = (unsigned char *)src;
+	d_temp = (unsigned char *)dest;
+	temp = (unsigned char *)malloc(sizeof(unsigned char) * n);
 	while (counter < n)
 	{
 		temp[counter] = s_temp[counter];
