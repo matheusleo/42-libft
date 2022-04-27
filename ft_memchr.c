@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 22:25:51 by mleonard          #+#    #+#             */
-/*   Updated: 2022/04/13 22:40:10 by mleonard         ###   ########.fr       */
+/*   Updated: 2022/04/25 22:38:48 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	s_temp = (unsigned char *)s;
 	while (index < n)
 	{
-		if (s_temp[index] == c)
+		if (s_temp[index] == (unsigned char)c)
 			return ((void *)(s + index));
 		index++;
 	}
