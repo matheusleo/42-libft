@@ -32,7 +32,8 @@ SOURCE	:=	ft_atoi.c \
 			ft_strjoin.c \
 			ft_strmapi.c \
 			ft_strtrim.c \
-			ft_substr.c
+			ft_substr.c \
+			ft_itoa.c
 OBJS	:=	$(SOURCE:.c=.o)
 
 CC	:=	cc
@@ -44,8 +45,8 @@ RM	:=	rm -rf
 $(NAME):	$(OBJS)
 			$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
-%.o:	%.c
-		$(CC) -c $(CFLAGS) -o $@ $^
+%.o:	%.c $(INCLUDES)
+		$(CC) -c $(CFLAGS) -o $@ $<
 
 all:	$(NAME)
 
