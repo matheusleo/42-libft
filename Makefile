@@ -39,7 +39,7 @@ OBJS	:=	$(SOURCE:.c=.o)
 CC	:=	cc
 CFLAGS	:=	-Wall -Wextra -Werror
 AR	:=	ar
-ARFLAGS	:=	-rc
+ARFLAGS	:=	-rcs
 RM	:=	rm -rf
 
 $(NAME):	$(OBJS)
