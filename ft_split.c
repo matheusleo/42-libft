@@ -6,54 +6,63 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 21:50:27 by mleonard          #+#    #+#             */
-/*   Updated: 2022/04/22 12:18:53 by mleonard         ###   ########.fr       */
+/*   Updated: 2022/04/28 23:17:21 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-static size_t	count_words(char const *str, char limit)
+static size_t	ft_count_strs(char const *str, char limiter)
 {
-	size_t	counter;
+	size_t	total_str;
 	size_t	index;
 
-	counter = 0;
 	index = 0;
+	total_str = 0;
 	while (str[index])
 	{
-		if (str[index] == limit)
-			counter++;
-		index++;
+		if (str[index + 1] == limiter || !str[index + 1])
+			total_str++;
+		str++;
 	}
-	return (counter + 1);
+	return (total_str);
+}
+
+static char	*ft_copy_word(char **arr, size_t pos, char *str, char limiter)
+{
+	char	*end;
+	size_t	substr_size;
+
+	end = ft_strchr(str, limiter);
+	if (!end)
+		end = str + ft_strlen(str);
+	substr_size = end - str;
+	arr[pos] = ft_substr(str, 0, substr_size);
+	return (end);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	total_strs;
-	char	**all_strs;
-	size_t	counter_str;
-	size_t	len_str;
+	size_t	word_nb;
+	size_t	arr_index;
+	char	**arr;
+	char	*str_copy;
 
-	total_strs = count_words(s, c);
-	all_strs = (char **)malloc(sizeof(char *) * (total_strs + 1));
-	if (!all_strs)
+	word_nb = ft_count_strs(s, c);
+	arr = (char **)malloc(sizeof(char *) * (word_nb + 1));
+	if (!arr)
 		return (NULL);
-	counter_str = 0;
-	while (counter_str < total_strs)
+	arr_index = 0;
+	str_copy = (char *)s;
+	while (*str_copy)
 	{
-		len_str = 0;
-		while (s[len_str] != c && s[len_str])
-			len_str++;
-		len_str++;
-		all_strs[counter_str] = (char *)malloc(sizeof(char) * len_str);
-		if (!all_strs[counter_str])
-			return (NULL);
-		ft_strlcpy(all_strs[counter_str], s, len_str);
-		s += len_str;
-		counter_str++;
+		while (*str_copy == c)
+			str_copy++;
+		if (*str_copy == '\0')
+			break ;
+		str_copy = ft_copy_word(arr, arr_index, str_copy, c);
+		arr_index++;
 	}
-	all_strs[counter_str] = NULL;
-	return (all_strs);
+	arr[arr_index] = NULL;
+	return (arr);
 }

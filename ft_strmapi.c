@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 12:35:18 by mleonard          #+#    #+#             */
-/*   Updated: 2022/04/22 15:27:55 by mleonard         ###   ########.fr       */
+/*   Updated: 2022/04/27 20:09:44 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
+	char	*new_str;
 	size_t	index;
-	char	*new_string;
 
-	index = 0;
-	new_string = (char *)malloc(sizeof(char) * ft_strlen(s));
-	if (!new_string)
+	new_str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!new_str)
 		return (NULL);
+	index = 0;
 	while (s[index])
 	{
-		new_string[index] = f(index, s[index]);
+		new_str[index] = f(index, (char)s[index]);
 		index++;
 	}
-	new_string[index] = '\0';
-	return (new_string);
+	new_str[index] = '\0';
+	return (new_str);
 }
