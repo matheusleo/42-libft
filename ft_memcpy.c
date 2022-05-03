@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 21:51:45 by mleonard          #+#    #+#             */
-/*   Updated: 2022/04/14 19:24:46 by mleonard         ###   ########.fr       */
+/*   Updated: 2022/05/02 23:46:46 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*d_temp;
 	unsigned char	*s_temp;
 
-	if (src <= dest && dest <= (src + n))
-		return (dest);
-	if (dest <= src && src <= (dest + n))
-		return (dest);
 	counter = 0;
 	d_temp = (unsigned char *)dest;
 	s_temp = (unsigned char *)src;
