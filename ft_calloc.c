@@ -6,18 +6,23 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 21:36:34 by mleonard          #+#    #+#             */
-/*   Updated: 2022/04/25 22:15:48 by mleonard         ###   ########.fr       */
+/*   Updated: 2022/05/04 19:14:28 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*buf;
+	size_t	prod;
 
+	prod = nmemb * size;
+	if (nmemb == 0 || size == 0 || (prod / nmemb != size))
+		return (NULL);
 	buf = malloc(nmemb * size);
-	if (nmemb == 0 || size == 0 || !buf)
+	if (!buf)
 		return (NULL);
 	ft_bzero(buf, nmemb * size);
 	return (buf);

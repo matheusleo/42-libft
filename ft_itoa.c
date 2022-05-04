@@ -6,15 +6,12 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 23:35:16 by mleonard          #+#    #+#             */
-/*   Updated: 2022/04/27 19:37:48 by mleonard         ###   ########.fr       */
+/*   Updated: 2022/05/04 19:56:33 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-
-// 2147483647
-// -2147483648
 
 static size_t	ft_count_dgts_sign(int n)
 {
@@ -52,7 +49,6 @@ static char	*ft_reverse(char *str, size_t start_index)
 
 char	*ft_itoa(int n)
 {
-	size_t	total_dgts_sign;
 	char	*str;
 	size_t	start;
 
@@ -60,8 +56,9 @@ char	*ft_itoa(int n)
 		return (ft_strdup("-2147483648"));
 	if (n == 0)
 		return (ft_strdup("0"));
-	total_dgts_sign = ft_count_dgts_sign(n);
-	str = (char *)ft_calloc((total_dgts_sign + 1), sizeof(char));
+	str = (char *)malloc((ft_count_dgts_sign(n) + 1), sizeof(char));
+	if (!str)
+		return (NULL);
 	start = 0;
 	if (n < 0)
 	{
@@ -75,5 +72,5 @@ char	*ft_itoa(int n)
 		n /= 10;
 	}
 	*str = '\0';
-	return (ft_reverse(str -= total_dgts_sign, start));
+	return (ft_reverse(str -= ft_count_dgts_sign(n), start));
 }

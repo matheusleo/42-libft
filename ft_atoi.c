@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 09:56:47 by mleonard          #+#    #+#             */
-/*   Updated: 2022/04/15 14:08:01 by mleonard         ###   ########.fr       */
+/*   Updated: 2022/05/04 18:29:44 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,3 @@ int	ft_atoi(const char *nptr)
 		return (res);
 	return (res * sign);
 }
-
-/*
-	[x] handle null and positive numbers
-	[x] handle negative numbers
-	[x] handle whitespaces
-	[x] handle signs
-	[] handle overflow - MIN_INT && MAX_INT (not sure)
-	[] invalid input (not sure)
- */

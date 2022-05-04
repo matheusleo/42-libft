@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 15:29:49 by mleonard          #+#    #+#             */
-/*   Updated: 2022/05/02 21:52:38 by mleonard         ###   ########.fr       */
+/*   Updated: 2022/05/04 18:45:08 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,3 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new_lst);
 }
-
-/*
-	[] iterates the 'lst' and aplies the function 'f' on the **content**
-	of each node
-	[] creates a new lst based on the result of the sucessive operations of 'f'
-	[] use 'del' if needed
-	[] return NULL if fails
-*/

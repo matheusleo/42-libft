@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 21:18:26 by mleonard          #+#    #+#             */
-/*   Updated: 2022/04/08 22:22:41 by mleonard         ###   ########.fr       */
+/*   Updated: 2022/05/04 20:01:07 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strdup(const char *s)
 	d_len = 0;
 	s_len = ft_strlen(s);
 	dest = (char *)malloc(sizeof(char) * (s_len + 1));
+	if (!dest)
+		return (NULL);
 	if (dest)
 	{
 		while (d_len <= s_len)
