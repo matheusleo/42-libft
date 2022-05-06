@@ -6,35 +6,39 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 23:35:16 by mleonard          #+#    #+#             */
-/*   Updated: 2022/05/04 19:56:33 by mleonard         ###   ########.fr       */
+/*   Updated: 2022/05/05 22:07:03 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-static size_t	ft_count_dgts_sign(int n)
+size_t	ft_count_dgts_sign(int n)
 {
 	size_t	counter;
 
-	counter = 1;
+	counter = 0;
 	if (n < 0)
 		counter++;
-	while (n / 10 != 0)
+	if (n == 0)
+		return (1);
+	while (n != 0)
 	{
-		counter++;
 		n = n / 10;
+		counter++;
 	}
 	return (counter);
 }
 
-static char	*ft_reverse(char *str, size_t start_index)
+char	*ft_reverse(char *str)
 {
 	size_t	start;
 	size_t	end;
 	char	aux_var;
 
-	start = start_index;
+	start = 0;
+	if (str[start] == '-')
+		start++;
 	end = ft_strlen(str) - 1;
 	while (end > start)
 	{
@@ -50,27 +54,27 @@ static char	*ft_reverse(char *str, size_t start_index)
 char	*ft_itoa(int n)
 {
 	char	*str;
-	size_t	start;
+	size_t	max_size;
+	size_t	index;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	if (n == 0)
-		return (ft_strdup("0"));
-	str = (char *)malloc((ft_count_dgts_sign(n) + 1), sizeof(char));
+	max_size = ft_count_dgts_sign(n);
+	str = (char *)malloc(sizeof(char) * (max_size + 1));
 	if (!str)
 		return (NULL);
-	start = 0;
+	index = 0;
 	if (n < 0)
 	{
-		*str++ = '-';
-		start++;
-		n *= -1;
+		str[index++] = '-';
+		n = -n;
 	}
-	while (n != 0)
+	while (index < max_size)
 	{
-		*str++ = n % 10 + '0';
-		n /= 10;
+		str[index] = n % 10 + '0';
+		n = n / 10;
+		index++;
 	}
-	*str = '\0';
-	return (ft_reverse(str -= ft_count_dgts_sign(n), start));
+	str[index] = '\0';
+	return (ft_reverse(str));
 }

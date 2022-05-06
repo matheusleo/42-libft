@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 21:50:27 by mleonard          #+#    #+#             */
-/*   Updated: 2022/04/28 23:17:21 by mleonard         ###   ########.fr       */
+/*   Updated: 2022/05/05 00:54:55 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,18 @@ static size_t	ft_count_strs(char const *str, char limiter)
 {
 	size_t	total_str;
 	size_t	index;
+	size_t	next;
 
 	index = 0;
 	total_str = 0;
+	while (str[index] && str[index] == limiter)
+		index++;
 	while (str[index])
 	{
-		if (str[index + 1] == limiter || !str[index + 1])
+		next = index + 1;
+		if (str[index] != limiter && (str[next] == limiter || !str[next]))
 			total_str++;
-		str++;
+		index++;
 	}
 	return (total_str);
 }

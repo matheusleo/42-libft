@@ -6,14 +6,13 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 23:58:43 by mleonard          #+#    #+#             */
-/*   Updated: 2022/05/03 00:03:40 by mleonard         ###   ########.fr       */
+/*   Updated: 2022/05/06 01:06:43 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_BONUS_H
 # define LIBFT_BONUS_H
 # include <stdlib.h>
-# include <unistd.h>
 
 typedef struct s_list
 {
