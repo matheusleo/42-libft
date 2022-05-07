@@ -6,11 +6,11 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 15:29:49 by mleonard          #+#    #+#             */
-/*   Updated: 2022/05/04 18:45:08 by mleonard         ###   ########.fr       */
+/*   Updated: 2022/05/07 12:20:42 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
