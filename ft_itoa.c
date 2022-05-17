@@ -6,14 +6,13 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 23:35:16 by mleonard          #+#    #+#             */
-/*   Updated: 2022/05/05 22:07:03 by mleonard         ###   ########.fr       */
+/*   Updated: 2022/05/17 18:55:10 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-size_t	ft_count_dgts_sign(int n)
+static size_t	ft_count_dgts_sign(int n)
 {
 	size_t	counter;
 
@@ -30,7 +29,7 @@ size_t	ft_count_dgts_sign(int n)
 	return (counter);
 }
 
-char	*ft_reverse(char *str)
+static char	*ft_reverse(char *str)
 {
 	size_t	start;
 	size_t	end;
