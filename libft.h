@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 18:50:42 by mleonard          #+#    #+#             */
-/*   Updated: 2022/08/29 21:47:55 by mleonard         ###   ########.fr       */
+/*   Updated: 2022/08/29 22:36:20 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
+# define STDOUT 1
+# define FALSE 0
+# define TRUE 1
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 5
@@ -25,6 +29,19 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+// ft_printf
+typedef struct s_flags
+{
+	int	alt_form;
+	int	signed_form;
+	int	spaced_form;
+	int	dash_flag;
+	int	zero_flag;
+	int	dot_flag;
+	int	field_width;
+	int	total_flags;
+}				t_flags;
 
 // Libc functions
 int		ft_isalpha(int c);
@@ -77,5 +94,19 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 // GNL
 char	*get_next_line(int fd);
+
+// ft_printf
+int		ft_printf(const char *format, ...);
+t_flags	ft_flag_parser(const char *str_flags);
+int		ft_print_char(int c, t_flags flags);
+int		ft_print_str(char *str, t_flags flags);
+int		ft_print_ptr(void *ptr, t_flags flags);
+int		ft_print_uint(unsigned int nb, t_flags flags);
+int		ft_print_int(int nb, t_flags flags);
+int		ft_print_hex(unsigned int nb, int is_upper, t_flags flags);
+int		u_print_padding(char c, int length);
+int		u_print_str(char *str);
+char	*is_format_char(char c);
+char	*is_flag_char(char c);
 
 #endif
