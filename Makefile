@@ -33,7 +33,8 @@ SOURCE		:=	ft_atoi.c \
 				ft_strmapi.c \
 				ft_strtrim.c \
 				ft_substr.c \
-				ft_itoa.c
+				ft_itoa.c \
+				get_next_line.c
 OBJS		:=	$(SOURCE:.c=.o)
 
 BONUSSOURCE	:=	ft_lstnew_bonus.c \
