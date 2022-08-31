@@ -24,21 +24,12 @@ A parte mandatória consitia em implementar uma série de funções dividas em d
 | <stdlib.h> | [atoi](ft_atoi.c) [calloc](ft_calloc.c) |
 | <strings.h> | [bzero](ft_bzero.c) |
 
-2. Funçẽos adicionais - outra série de funções que deveriam ser criadas do 0 com base nas especificações passadas para cada uma
+2. Funções adicionais - outra série de funções que deveriam ser criadas do 0 com base nas especificações passadas para cada uma
 
-| Funções |
-| --- |
-| [ft_strjoin](ft_strjoin.c) |
-| [ft_strmapi](ft_strmapi.c) |
-| [ft_split](ft_split.c) |
-| [ft_itoa](ft_itoa.c) |
-| [ft_striteri](ft_striteri.c) |
-| [ft_strtrim](ft_strtrim.c) |
-| [ft_substr](ft_substr.c) |
-| [ft_putchar_fd](ft_putchar_fd.c) |
-| [ft_putstr_fd](ft_putstr_fd.c) |
-| [ft_putendl_fd](ft_putendl_fd.c) |
-| [ft_putnbr_fd](ft_putnbr_fd.c) |
+| Relacionados à | Funções |
+| --- | --- |
+| strings |[ft_strjoin](ft_strjoin.c)  [ft_strmapi](ft_strmapi.c)  [ft_split](ft_split.c)  [ft_itoa](ft_itoa.c)  [ft_striteri](ft_striteri.c)  [ft_strtrim](ft_strtrim.c)  [ft_substr](ft_substr.c) |
+| file descriptors | [ft_putchar_fd](ft_putchar_fd.c) [ft_putstr_fd](ft_putstr_fd.c) [ft_putendl_fd](ft_putendl_fd.c) [ft_putnbr_fd](ft_putnbr_fd.c) |
 
 
 ### Bônus
@@ -54,15 +45,15 @@ A parte bônus do projeto consistia em criar uma série de funções relacionada
 
 | Funções |
 | --- |
-| [ft_lstnew](ft_lstnew.c) |
-| [ft_lstadd_front](ft_lstadd_front.c) |
-| [ft_lstsize](ft_lstsize.c) |
-| [ft_lstlast](ft_lstlast.c) |
-| [ft_lstadd_back](ft_lstadd_back.c) |
-| [ft_lstdelone](ft_lstdelone.c) |
-| [ft_lstclear](ft_lstclear.c) |
-| [ft_lstiter](ft_lstiter.c) |
-| [ft_lstmap](ft_lstmap.c) |
+| [ft_lstnew](ft_lstnew_bonus.c) |
+| [ft_lstadd_front](ft_lstadd_front_bonus.c) |
+| [ft_lstsize](ft_lstsize_bonus.c) |
+| [ft_lstlast](ft_lstlast_bonus.c) |
+| [ft_lstadd_back](ft_lstadd_back_bonus.c) |
+| [ft_lstdelone](ft_lstdelone_bonus.c) |
+| [ft_lstclear](ft_lstclear_bonus.c) |
+| [ft_lstiter](ft_lstiter_bonus.c) |
+| [ft_lstmap](ft_lstmap_bonus.c) |
 
 ## Execução
 
