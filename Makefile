@@ -31,10 +31,9 @@ RED			:= \033[0;31m
 GREEN		:= \033[0;32m
 
 $(NAME):	$(OBJS)
-
 			@echo "$(GREEN)All object files were created!$(OFF)"
 			@$(AR) $(ARFLAGS) $(NAME) $(OBJS)
-			@echo "$(GREEN)libft.a files were sucessfully linked!$(OFF)"
+			@echo "$(GREEN)$(NAME) files were sucessfully linked!$(OFF)"
 
 %.o:	%.c $(INCLUDES)
 		@$(CC) -c $(CFLAGS) -o $@ $<
@@ -42,7 +41,8 @@ $(NAME):	$(OBJS)
 all:	$(NAME)
 
 bonus:	$(BONUSOBJS)
-		$(AR) $(ARFLAGS) $(NAME) $(BONUSOBJS)
+		@$(AR) $(ARFLAGS) $(NAME) $(BONUSOBJS)
+		@echo "$(GREEN)All bonus functions were added to the $(NAME)!$(OFF)"
 
 clean:
 		@$(RM) $(OBJS) $(BONUSOBJS)
