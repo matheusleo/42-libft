@@ -9,7 +9,8 @@ SOURCE		:=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 				ft_putendl_fd.c ft_putnbr_fd.c ft_split.c ft_striteri.c ft_strjoin.c \
 				ft_strmapi.c ft_strtrim.c ft_substr.c ft_itoa.c get_next_line.c \
 				ft_printf.c ft_print_char.c ft_print_hex.c ft_print_int.c \
-				ft_print_ptr.c ft_print_str.c ft_print_uint.c ft_flag_parser.c utils.c
+				ft_print_ptr.c ft_print_str.c ft_print_uint.c ft_flag_parser.c utils.c \
+				ft_ternary.c
 OBJS		:=	$(SOURCE:.c=.o)
 
 # Bonus part
