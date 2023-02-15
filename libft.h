@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 18:50:42 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/15 02:00:57 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/15 02:04:27 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@
 #  define BUFFER_SIZE 5
 # endif
 
-# define MAX_INT 0x7fffffff
-# define MIN_INT 0x7fffffff + 1
-# define MAX_LONG 0x7fffffffffffffffL
-# define MIN_LONG 0x7fffffffffffffffL + 1
+# define MAX_INT 2147483647
+# define MIN_INT -2147483648
+# define MAX_LONG 9223372036854775807
+# define MIN_LONG -9223372036854775808
 
 // Bonus - struct
 typedef struct s_list
