@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 01:51:15 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/15 01:57:35 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/15 02:04:40 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ long int	ft_atol(const char *nptr)
 	res = 0;
 	sign = 0;
 	index = jump_spaces(nptr);
-	if (strncmp(nptr, "-9223372036854775808", 11) == 0)
+	if (ft_strncmp(nptr, "-9223372036854775808", 11) == 0)
 		return (MIN_LONG);
 	while (nptr[index] == '-' || nptr[index] == '+')
 	{
